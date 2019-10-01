@@ -13,6 +13,7 @@ applications:
   snap-store-proxy:
     charm: /path/to/snap-store-proxy
     num_units: 1
+    expose: true
 relations:
   - [snap-store-proxy, postgresql:db-admin]
 ```
