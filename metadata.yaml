@@ -1,0 +1,9 @@
+name: snap-store-proxy
+summary: Charm for testing snap-store-proxy
+description: Charm for testing snap-store-proxy
+maintainers: ['Cory Johns <johnsca@gmail.com>']
+tags: ['test']
+series: [bionic]
+requires:
+  db:
+    interface: pgsql
