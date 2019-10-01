@@ -40,5 +40,12 @@ be included in the status, or can be retrieved using:
 juju ssh {unit} "snap-proxy status"
 ```
 
+You can then create or delete overrides using the actions:
+
+```
+juju run-action --wait {unit} create-override snap=kubectl channel=1.16/stable rev=1202
+juju run-action --wait {unit} delete-override snap=kubectl channel=1.16/stable
+```
+
 
 [snap-store-proxy]: https://docs.ubuntu.com/snap-store-proxy/en/

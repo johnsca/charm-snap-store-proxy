@@ -1,0 +1,15 @@
+#!/usr/local/sbin/charm-env python
+
+from subprocess import run
+from charms.reactive import is_flag_set
+from charmhelpers.core.hookenv import action_get, action_set, action_fail
+
+if not is_flag_set('registered'):
+    action_fail('snap store proxy not registered')
+    raise SystemExit(1)
+
+snap = action_get('snap')
+channel = action_get('channel')
+rev = action_get('rev')
+run(['snap-proxy', 'override', snap, f'{channel}={rev}'], check=True)
+action_set({'success': 'true'})
