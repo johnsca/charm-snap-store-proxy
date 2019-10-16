@@ -3,3 +3,5 @@ includes:
   - layer:status
   - layer:snap
   - interface:pgsql
+exclude:
+  - bundle.yaml
