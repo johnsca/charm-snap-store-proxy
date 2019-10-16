@@ -9,7 +9,7 @@ from charms import layer
 
 @when_not('installed')
 def install():
-    layer.snap.install('snap-store-proxy')
+    layer.snap.install('snap-store-proxy', channel='candidate')
     layer.status.waiting('Waiting for Postgres')
     set_flag('installed')
 
